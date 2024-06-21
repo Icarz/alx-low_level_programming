@@ -13,12 +13,10 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
+	last_digit = abs(n) % 10; /* Use abs() to ensure positive last_digit */
 
-	/* Get the last digit */
-	last_digit = abs(n) % 10; // Use abs() to ensure positive last_digit
-
-	/* Print the result */
 	printf("Last digit of %d is %d ", n, last_digit);
+
 	if (last_digit > 5)
 		printf("and is greater than 5\n");
 	else if (last_digit == 0)
@@ -28,3 +26,4 @@ int main(void)
 
 	return (0);
 }
+
