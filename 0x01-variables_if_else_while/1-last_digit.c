@@ -13,7 +13,7 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	last_digit = abs(n) % 10; // Use abs() to ensure positive last_digit
+	last_digit = abs(n) % 10; /* Use abs() to ensure positive last_digit */
 
 	printf("Last digit of %d is %d ", n, last_digit);
 
@@ -26,5 +26,4 @@ int main(void)
 
 	return (0);
 }
-
 
