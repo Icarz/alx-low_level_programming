@@ -1,35 +1,25 @@
-#include <stdio.h>  // Include the necessary header for printf
 #include <stdlib.h>
 #include <time.h>
-
+#include <stdio.h>
 /**
- * main - Entry point
+ * main - program entry point
  *
- * Return: Always 0 (Success)
- */
+ * Return: always 0 (success)
+**/
 int main(void)
 {
-    int n;
+	int n, last_digit;
 
-    srand(time(0));
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+	last_digit = n % 10;
 
-    /* Generate a random number between -RAND_MAX/2 and RAND_MAX/2 */
-    n = rand() - RAND_MAX / 2;
-
-    /* Get the last digit of n */
-    int last_digit = n % 10;
-
-    printf("Last digit of %d is ", n);
-
-    /* Print message based on the last digit */
-    if (last_digit > 5) {
-        printf("and is greater than 5\n");
-    } else if (last_digit == 0) {
-        printf("and is 0\n");
-    } else {
-        printf("and is less than 6 and not 0\n");
-    }
-
-    return (0);
+	printf("Last digit of %d is %d", n, last_digit);
+	if (last_digit > 5)
+		printf(" and is greater than 5\n");
+	else if (last_digit == 0)
+		printf(" and is 0\n");
+	else
+		printf(" and is less than 6 and not 0\n");
+	return (0);
 }
-
