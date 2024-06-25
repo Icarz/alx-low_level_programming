@@ -2,12 +2,14 @@
 
 /**
  * add - Adds two integers
- * @a: The first integer
- * @b: The second integer
+ * @a: First integer
+ * @b: Second integer
  *
- * Return: The sum of the two integers
+ * Return: Sum of a and b
  */
 int add(int a, int b)
 {
-    return a + b;
+	/* Remove unnecessary space at the beginning of the line */
+	return (a + b); /* Add parentheses around return statement */
 }
+
