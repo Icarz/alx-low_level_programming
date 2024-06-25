@@ -1,25 +1,19 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 
-/**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
 int main(void)
 {
-    int a, b, sum;
+    printf("Printing from 0 to 98:\n");
+    print_to_98(0);
 
-    a = 10;
-    b = 20;
+    printf("Printing from -10 to 98:\n");
+    print_to_98(-10);
 
-    sum = add(a, b);
+    printf("Printing from 50 to 98:\n");
+    print_to_98(50);
 
-    printf("Sum of %d and %d is %d\n", a, b, sum);
+    printf("Printing from 120 to 98:\n");
+    print_to_98(120);
 
-    return 0;
+    return (0);
 }
-
-
-
-
