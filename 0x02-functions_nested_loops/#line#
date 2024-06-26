@@ -1,0 +1,15 @@
+11-print_to_98.c:13: WARNING: please, no spaces at the start of a line
+11-print_to_98.c:14: ERROR: code indent should use tabs where possible
+11-print_to_98.c:14: WARNING: please, no spaces at the start of a line
+11-print_to_98.c:15: ERROR: code indent should use tabs where possible
+11-print_to_98.c:15: WARNING: please, no spaces at the start of a line
+11-print_to_98.c:15: WARNING: suspect code indent for conditional statements (8, 12)
+11-print_to_98.c:16: ERROR: code indent should use tabs where possible
+11-print_to_98.c:16: WARNING: please, no spaces at the start of a line
+11-print_to_98.c:17: ERROR: code indent should use tabs where possible
+11-print_to_98.c:17: WARNING: please, no spaces at the start of a line
+11-print_to_98.c:18: ERROR: code indent should use tabs where possible
+11-print_to_98.c:18: WARNING: please, no spaces at the start of a line
+11-print_to_98.c:19: WARNING: please, no spaces at the start of a line
+11-print_to_98.c:20: WARNING: please, no spaces at the start of a line
+total: 5 errors, 10 warnings, 21 lines checked0;276;0c
