@@ -6,7 +6,12 @@
  * @s: the string to search within
  * @accept: the characters to accept in the substring
  *
- * Return
+ * Description: Calculates the length (in bytes) of the initial segment of
+ *              the string `s` which consists entirely of characters from the
+ *              string `accept`.
+ *
+ * Return: Length of the initial segment of `s` containing only characters
+ *         from `accept`.
  */
 unsigned int _strspn(char *s, char *accept)
 {
