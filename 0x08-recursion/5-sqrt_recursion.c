@@ -3,34 +3,24 @@
 /**
  * _sqrt_helper - helper function to calculate the square root recursively
  * @n: the number to find the square root of
- * @low: the lower bound of the search range
- * @high: the upper bound of the search range
+ * @guess: current guess for the square root
  *
- * Return: the square root of n, or -1 if no natural square root is found
+ * Return: the natural square root of n,
+   or -1 if n does not have a natural square root
  */
-static int _sqrt_helper(int n, int low, int high)
+static int _sqrt_helper(int n, int guess)
 {
-int mid;
-long square;
-
-if (low > high)
+if (guess * guess == n)
+{
+return (guess);
+}
+else if (guess * guess > n)
 {
 return (-1);
 }
-mid = (low + high) / 2;
-square = (long)mid *mid;
-
-if (square == n)
-{
-return (mid);
-}
-else if (square < n)
-{
-return (_sqrt_helper(n, mid + 1, high));
-}
 else
 {
-return (_sqrt_helper(n, low, mid - 1));
+return (_sqrt_helper(n, guess + 1));
 }
 }
 
@@ -52,6 +42,6 @@ return (n);
 }
 else
 {
-return (_sqrt_helper(n, 0, n / 2));
+return (_sqrt_helper(n, 1));
 }
 }
