@@ -7,15 +7,15 @@
  */
 int main(void)
 {
- char name[] = "_putchar\n";
- int a = 0;
+char name[] = "_putchar\n";
+int a = 0;
 
- while (name[a] != '\0')
- {
- _putchar(name[a]);
- a++;
- }
- return (0);
+while (name[a] != '\0')
+{
+_putchar(name[a]);
+a++;
+}
+return (0);
 }
 
 
