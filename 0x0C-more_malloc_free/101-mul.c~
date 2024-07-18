@@ -1,0 +1,120 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* Function prototypes */
+unsigned int _strlen(char *str);
+void _puts(char *str);
+void mul(char *num1, char *num2);
+
+/**
+ * main - Entry point
+ * @argc: Number of arguments
+ * @argv: Array of arguments
+ *
+ * Return: Always 0 (Success)
+ */
+int main(int argc, char *argv[])
+{
+int i;
+ 
+if (argc != 3)  /* Check if number of arguments is incorrect */
+{
+printf("Error\n");
+exit(98);
+}
+/* Validate if num1 and num2 are composed of digits */
+for (i = 1; i <= 2; i++)
+{
+char *num = argv[i];
+while (*num)
+{
+if (*num < '0' || *num > '9')
+{
+printf("Error\n");
+exit(98);
+}
+num++;
+}
+}
+/* Call the multiplication function */
+mul(argv[1], argv[2]);
+return (0);
+}
+
+/**
+ * _strlen - Calculate the length of a string
+ * @str: String
+ *
+ * Return: Length of the string
+ */
+unsigned int _strlen(char *str)
+{
+unsigned int len = 0;
+
+while (str[len])
+len++;
+return (len);
+}
+
+/**
+ * _puts - Print a string to stdout
+ * @str: String to print
+ */
+void _puts(char *str)
+{
+while (*str)
+{
+putchar(*str);
+str++;
+}
+}
+
+/**
+ * mul - Multiply two positive numbers
+ * @num1: First number as a string
+ * @num2: Second number as a string
+ */
+void mul(char *num1, char *num2)
+{
+unsigned int len1 = _strlen(num1);
+unsigned int len2 = _strlen(num2);
+unsigned int len_res = len1 + len2;
+int *res;
+unsigned int i, j, carry, n1, n2, prod;
+
+res = calloc(len_res, sizeof(int)); /* Allocate memory for the result array */
+if (res == NULL)
+{
+printf("Error\n");
+exit(98);
+}
+/* Go from right to left in num1 */
+for (i = len1 - 1; i < len1; i--)
+{
+carry = 0;
+n1 = num1[i] - '0';
+/* Go from right to left in num2 */
+for (j = len2 - 1; j < len2; j--)
+{
+n2 = num2[j] - '0';
+/* Multiply current digits and add to result */
+prod = n1 *n2 + carry + res[i + j + 1];
+carry = prod / 10;
+res[i + j + 1] = prod % 10;
+}
+/* Store carry in the next high place */
+if (carry != 0)
+res[i + j + 1] += carry;
+}
+/* Find the position of the first non-zero digit in res */
+for (i = 0; i < len_res; i++)
+{
+if (res[i] != 0)
+break;
+}
+	/* Print the result */
+for (; i < len_res; i++)
+printf("%d", res[i]);
+printf("\n");
+free(res); /* Free allocated memory */
+}
