@@ -20,7 +20,8 @@ return (a + b);
  * Return: The difference of a and b.
  */
 int op_sub(int a, int b)
-{return (a - b);
+{
+return (a - b);
 }
 
 /**
@@ -56,5 +57,5 @@ return (a / b);
  */
 int op_mod(int a, int b)
 {
- return (a % b);
+return (a % b);
 }
