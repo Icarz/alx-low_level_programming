@@ -1,4 +1,6 @@
 #include <stdarg.h>
+#include "variadic_functions.h"
+
 
 /**
  * sum_them_all - Calculates the sum of an undefined number of integers.
